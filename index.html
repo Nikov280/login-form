@@ -3,94 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Login</title>
+    <title>Student Sign-in Form</title>
     <style>
-        
-        * { box-sizing: border-box; }
-        
+        /* General Reset */
+        * {
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #f0f2f5; /* Light grey background */
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
+            justify-content: center;
+            min-height: 100vh;
             margin: 0;
         }
 
-        .login-card {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        h2 {
-            margin: 0 0 25px 0;
-            color: #333;
-            text-align: center;
-            font-size: 24px;
-        }
-
-        label {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
+        h1 {
+            color: #2c3e50;
             margin-bottom: 20px;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            outline: none;
-            transition: border-color 0.3s ease;
         }
 
-        
-        input:focus {
-            border-color: #764ba2;
-        }
-
-        input[type="submit"] {
+        /* The white card container */
+        .form-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            background: #764ba2;
-            color: white;
+            max-width: 450px;
+        }
+
+        /* Label styling */
+        label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* Input styling */
+        input {
+            width: 100%;
             padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: #f9f9f9;
+        }
+
+        /* Changes background on focus */
+        input:focus {
+            outline: none;
+            border-color: #0056b3;
+            background-color: #fff;
+        }
+
+        /* Submit button styling */
+        .submit-btn {
+            width: 100%;
+            background-color: #004aad; /* Dark blue from the image */
+            color: white;
+            padding: 14px;
             border: none;
             border-radius: 8px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s, background 0.3s;
+            transition: background 0.3s ease;
         }
 
-        input[type="submit"]:hover {
-            background: #5a3782;
-            transform: translateY(-2px);
-        }
-
-        input[type="submit"]:active {
-            transform: translateY(0);
+        .submit-btn:hover {
+            background-color: #003380;
         }
     </style>
 </head>
 <body>
 
-    <div class="login-card">
-        <h2>Login</h2>
-        <form action="/submit-login" method="post">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+    <h1>Student Sign-in Form</h1>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="••••••••" required>
+    <div class="form-card">
+        <form action="#" method="POST">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="e.g., John" required>
 
-            <input type="submit" value="Login">
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="e.g., Smith" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="e.g., user@example.com" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="student-id">Student ID:</label>
+            <input type="number" id="student-id" name="student-id" min="10000" max="99999" placeholder="5-digit ID (10000-99999)" required>
+
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
 
